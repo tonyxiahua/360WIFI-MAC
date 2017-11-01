@@ -32,3 +32,11 @@ MT7610U
 [High-performance 802.11ac Wi-Fi dongle solution](https://www.mediatek.com/products/broadbandWifi/mt7610u)
 
 
+### Cited Resources
+[让小锐WiFi支持USB无线网卡/随身WiFi](http://www.jianshu.com/p/e52f4b7bfa04)
+[Realtek released drivers for 802.11ac USB-adapters](https://www.tonymacx86.com/threads/realtek-released-drivers-for-802-11ac-usb-adapters.106288/)
+[[Guide] Installation of USB Wireless Antenna (Chipset RT2870/RT3070) in Mac OS X 10.11.x (El Capitan](https://www.tonymacx86.com/threads/guide-installation-of-usb-wireless-antenna-chipset-rt2870-rt3070-in-mac-os-x-10-11-x-el-capitan.183175/page-2)
+[黑苹果不能用wifi，买个360随身wifi二代，系统是MAC OX 10.11.4,求驱动](https://zhidao.baidu.com/question/1962967379729069900.html?si=1&qbpn=1_1&tx=&wtp=wk&word=360wifi+mac%E9%A9%B1%E5%8A%A8&fr=solved&from=qb&ssid=&uid=bd_1425924159_714&pu=sz%40224_240%2Cos%40&step=10&bd_page_type=1&init=middle)
+[[USB Wifi] Updated Ralink/Mediatek RT2870/ RT2770/ RT3X7X/ RT537X/ RT5572](http://www.insanelymac.com/forum/topic/299948-usb-wifi-updated-ralinkmediatek-rt2870-rt2770-rt3x7x-rt537x-rt5572/page-8)
+[RT2870](http://www.jianshu.com/p/17ab09b330ba?utm_campaign=maleskine&utm_content=note&utm_medium=pc_all_hots&utm_source=recommendation)
+
