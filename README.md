@@ -1,5 +1,5 @@
 # 360WIFI-MAC
-Method to Use 360 Portable Wi-Fi Adapter (1st gen &amp; 2nd gen) for Your Mac
+Use 360 Portable Wi-Fi Adapter (1st gen &amp; 2nd gen) on Your Mac
 ## Introduction
 This is an experimental project that I am not finish yet. Only tested on Mac OS 10.11.5 with 360 Wi-FI (2gen) with 8GB Flash Memory Drive.
 I am not guarantee this will fits your OS type and your 360device.
