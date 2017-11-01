@@ -26,9 +26,9 @@ You can use it whatever you want.
  
 ### Useful Resources
 RT2870
-[Broadband Wi-Fi Legacy Product]("https://www.mediatek.com/products/broadbandWifi/rt2870")
+(Broadband Wi-Fi Legacy Product)["https://www.mediatek.com/products/broadbandWifi/rt2870"]
 
 MT7610U
-[High-performance 802.11ac Wi-Fi dongle solution]("http://www.mediatek....nloads/mt7610u/")
+(High-performance 802.11ac Wi-Fi dongle solution)["http://www.mediatek....nloads/mt7610u/"]
 
 
