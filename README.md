@@ -43,5 +43,5 @@ MT7610U
 
 [[USB Wifi] Updated Ralink/Mediatek RT2870/ RT2770/ RT3X7X/ RT537X/ RT5572](http://www.insanelymac.com/forum/topic/299948-usb-wifi-updated-ralinkmediatek-rt2870-rt2770-rt3x7x-rt537x-rt5572/page-8)
 
-[RT2870](http://www.jianshu.com/p/17ab09b330ba?utm_campaign=maleskine&utm_content=note&utm_medium=pc_all_hots&utm_source=recommendation)
+[Tools I Recommended](http://www.jianshu.com/p/17ab09b330ba?utm_campaign=maleskine&utm_content=note&utm_medium=pc_all_hots&utm_source=recommendation)
 
