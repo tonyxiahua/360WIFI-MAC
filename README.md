@@ -1,9 +1,27 @@
 # 360WIFI-MAC
 Use 360 Portable Wi-Fi Adapter (1st gen &amp; 2nd gen) on Your Mac
 ## Introduction
+V1.0(beta relase):
+
 This is an experimental project that I am not finish yet. Only tested on Mac OS 10.11.5 with 360 Wi-FI (2gen) with 8GB Flash Memory Drive.
+
 I am not guarantee this will fits your OS type and your 360device.
----V1.0(beta relase)---
+
+For reference reason, we listed different type of your portable wifi devices:
+
+360随身WiFi(1st Gen): **RT5370**
+
+360随身WiFi2(2nd Gen & Some might comes with flash drive function):	**MT7601**
+
+小度WiFi: MT7601
+
+小米随身WiFi: RT2870（可能是MT7601驱动通用）
+
+迅雷随身WiFi: RTL8188EUS
+
+猎豹极速WiFi: RTL8192CU
+
+
 ## Useage
 1. Install the MT7612_7610U_D5.0.1.25_SDK1.0.2.18_UI5.0.0.27_20151209.dmg file. Notice: OS X 10.11.X El Captian compatible(OK).
 2. Follow the install instructions and plugin your 360wifi before the program tells you to restart.
@@ -23,7 +41,11 @@ Instructions could be:
 Icons for this progarm is so ugly.
 So I just put two more optional icon for you. 
 You can use it whatever you want.
- 
+
+Mac OS 10.6.X-10.9.X Only works with 1st Gen 360 Wifi 
+## Useage
+1.RTUSB_D2870-4.2.9.10_UI-5.0.0.01
+
 ### Useful Resources
 RT2870
 [Broadband Wi-Fi Legacy Product](https://www.mediatek.com/products/broadbandWifi/rt2870)
