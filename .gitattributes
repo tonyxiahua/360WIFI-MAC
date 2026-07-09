@@ -1,0 +1,12 @@
+*.app binary
+*.app/** binary
+*.dmg binary
+*.icns binary
+*.kext binary
+*.kext/** binary
+*.nib binary
+
+*.md text eol=lf
+*.sh text eol=lf
+*.txt text eol=lf
+*.plist text

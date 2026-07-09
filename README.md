@@ -1,69 +1,99 @@
 # 360WIFI-MAC
-Use 360 Portable Wi-Fi Adapter (1st gen &amp; 2nd gen) on Your Mac
-## Introduction
-V1.0(beta relase):
 
-This is an experimental project that I am not finish yet. Only tested on Mac OS 10.11.5 with 360 Wi-FI (2gen) with 8GB Flash Memory Drive.
+Use legacy 360 Portable Wi-Fi USB adapters on macOS.
 
-I am not guarantee this will fits your OS type and your 360device.
+This repository collects historical macOS drivers and utilities for several
+360 portable Wi-Fi adapter generations. These drivers are old kernel
+extensions and are mainly useful for OS X 10.7 through OS X 10.11.
 
-For reference reason, we listed different type of your portable wifi devices:
+## Supported Devices
 
-360随身WiFi(1st Gen): **RT5370**
+| Device | Common chipset | Notes |
+| --- | --- | --- |
+| 360 Portable Wi-Fi 1st Gen | RT5370 / RT2870 family | Use the 1st generation driver resources. |
+| 360 Portable Wi-Fi 2nd Gen | MT7601 / MT7610U family | Use the 2nd generation Mediatek package. |
+| XiaoDu Wi-Fi | MT7601 | May work with the same Mediatek package. |
+| Xiaomi Portable Wi-Fi | RT2870 or MT7601 variant | Compatibility depends on the exact USB ID. |
+| Xunlei Portable Wi-Fi | RTL8188EUS | Not covered by the bundled Ralink/Mediatek drivers. |
+| Cheetah Portable Wi-Fi | RTL8192CU | Not covered by the bundled Ralink/Mediatek drivers. |
 
-360随身WiFi2(2nd Gen & Some might comes with flash drive function):	**MT7601**
+## Quick Start
 
-小度WiFi: MT7601
+Run the environment check first:
 
-小米随身WiFi: RT2870（可能是MT7601驱动通用）
+```sh
+./scripts/doctor.sh
+```
 
-迅雷随身WiFi: RTL8188EUS
+Install by device generation:
 
-猎豹极速WiFi: RTL8192CU
+```sh
+# 2nd generation 360 Wi-Fi
+./scripts/install.sh --generation 2
 
+# 1st generation 360 Wi-Fi
+./scripts/install.sh --generation 1
+```
 
-## Useage
-1. Install the MT7612_7610U_D5.0.1.25_SDK1.0.2.18_UI5.0.0.27_20151209.dmg file. Notice: OS X 10.11.X El Captian compatible(OK).
-2. Follow the install instructions and plugin your 360wifi before the program tells you to restart.
-3. Restart the computer.
+The installer script detects your macOS version, selects the most likely
+driver image, mounts it, and opens or runs the bundled installer when possible.
 
-## Tricks
-It's recommended that disable your SIP on your macbook before you install the program.
-Instructions could be:
-1. Turn off your computer
-2. Press power button with "Command" + "R".
-3. Run Util-->Terminal on Mac OS Recovery Mode.
-4. Type "csrutil disable"
-5. Look at return value. It should success. Otherwise please Google it online for your case.
-6. Restart your computer
+To only see what would be selected:
 
-## Beauty
-Icons for this progarm is so ugly.
-So I just put two more optional icon for you. 
-You can use it whatever you want.
+```sh
+./scripts/install.sh --generation 2 --dry-run
+```
 
-Mac OS 10.6.X-10.9.X Only works with 1st Gen 360 Wifi 
-## Useage
-1.RTUSB_D2870-4.2.9.10_UI-5.0.0.01
+## macOS Compatibility
 
-### Useful Resources
-RT2870
-[Broadband Wi-Fi Legacy Product](https://www.mediatek.com/products/broadbandWifi/rt2870)
+| macOS version | 1st Gen recommendation | 2nd Gen recommendation |
+| --- | --- | --- |
+| OS X 10.7 - 10.9 | `10.7.X-10.9.X(1st Gen)Resources/RTUSB_D2870-4.2.9.10_UI-5.0.0.01.dmg` | Not the primary target. |
+| OS X 10.10 | `10.10.X(1st Gen)Resources/360WiFI-148F-7601-760B-RT2870-MT7610U_D5.0.1.22_SDK1.0.2.14_UI5.0.0.21_20141224.dmg` | May work with bundled Mediatek packages. |
+| OS X 10.11 | `10.11.X(1st Gen)Resources/BearExtender 5.4 (El Capitan Ready for chipsets RT2870 or RT3070).dmg` | `MT7612_7610U_D5.0.1.25_SDK1.0.2.18_UI5.0.0.27_20151209.dmg` |
 
-MT7610U
-[High-performance 802.11ac Wi-Fi dongle solution](https://www.mediatek.com/products/broadbandWifi/mt7610u)
+Modern macOS releases use stricter driver signing and system extension rules.
+These legacy kext installers should be treated as archival software, not as a
+guaranteed solution for current macOS versions.
 
+## SIP Notice
 
-### Cited Resources
-[让小锐WiFi支持USB无线网卡/随身WiFi](http://www.jianshu.com/p/e52f4b7bfa04)
+Some OS X 10.11 installations require System Integrity Protection to be
+disabled before third-party kernel extensions can be installed.
 
-[Realtek released drivers for 802.11ac USB-adapters](https://www.tonymacx86.com/threads/realtek-released-drivers-for-802-11ac-usb-adapters.106288/)
+1. Restart into Recovery by holding `Command + R`.
+2. Open Terminal from the Utilities menu.
+3. Run `csrutil disable`.
+4. Restart macOS and install the driver.
+5. After installation, consider returning to Recovery and running
+   `csrutil enable`.
 
-[[Guide] Installation of USB Wireless Antenna (Chipset RT2870/RT3070) in Mac OS X 10.11.x (El Capitan](https://www.tonymacx86.com/threads/guide-installation-of-usb-wireless-antenna-chipset-rt2870-rt3070-in-mac-os-x-10-11-x-el-capitan.183175/page-2)
+## Repository Layout
 
-[黑苹果不能用wifi，买个360随身wifi二代，系统是MAC OX 10.11.4,求驱动](https://zhidao.baidu.com/question/1962967379729069900.html?si=1&qbpn=1_1&tx=&wtp=wk&word=360wifi+mac%E9%A9%B1%E5%8A%A8&fr=solved&from=qb&ssid=&uid=bd_1425924159_714&pu=sz%40224_240%2Cos%40&step=10&bd_page_type=1&init=middle)
+```text
+.
+├── scripts/
+│   ├── doctor.sh      # macOS, SIP, USB, and installed-driver diagnostics
+│   └── install.sh     # version-aware installer launcher
+├── 10.7.X-10.9.X(1st Gen)Resources/
+├── 10.10.X(1st Gen)Resources/
+├── 10.10.X_rawDriver_RT2870(1st Gen kext&dmg)/
+├── 10.11.X(1st Gen)Resources/
+├── Mediatek Wireless Utility(Applaction 2nd Gen) Plugin&Use/
+└── MT7612_7610U_D5.0.1.25_SDK1.0.2.18_UI5.0.0.27_20151209.dmg
+```
 
-[[USB Wifi] Updated Ralink/Mediatek RT2870/ RT2770/ RT3X7X/ RT537X/ RT5572](http://www.insanelymac.com/forum/topic/299948-usb-wifi-updated-ralinkmediatek-rt2870-rt2770-rt3x7x-rt537x-rt5572/page-8)
+## Useful Resources
 
-[Tools I Recommended](http://www.jianshu.com/p/17ab09b330ba?utm_campaign=maleskine&utm_content=note&utm_medium=pc_all_hots&utm_source=recommendation)
+- [Mediatek RT2870 legacy product page](https://www.mediatek.com/products/broadbandWifi/rt2870)
+- [Mediatek MT7610U product page](https://www.mediatek.com/products/broadbandWifi/mt7610u)
+- [Installation guide for RT2870/RT3070 on OS X 10.11](https://www.tonymacx86.com/threads/guide-installation-of-usb-wireless-antenna-chipset-rt2870-rt3070-in-mac-os-x-10-11-x-el-capitan.183175/page-2)
+- [Ralink/Mediatek RT2870 driver discussion](http://www.insanelymac.com/forum/topic/299948-usb-wifi-updated-ralinkmediatek-rt2870-rt2770-rt3x7x-rt537x-rt5572/page-8)
 
+## Maintenance
+
+- Keep historical driver images unchanged unless replacing them with a verified
+  newer upstream artifact.
+- Do not commit `.DS_Store`, local mount folders, or generated logs.
+- Prefer adding automation under `scripts/` instead of expanding manual
+  installation steps in the README.
